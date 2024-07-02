@@ -4,6 +4,7 @@ import "./globals.css";
 const Home = () => {
   const [articles, setArticles] = useState([]);
   const [expandedArticle, setExpandedArticle] = useState(null);
+  const [autoGenerate, setAutoGenerate] = useState(false);
 
   const fetchNewsHeadlines = async () => {
     const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.NEXT_PUBLIC_NEWSAPI_API_KEY}`;
@@ -41,7 +42,9 @@ const Home = () => {
 
   useEffect(() => {
     const initializeArticles = async () => {
-      await fetchNewsHeadlines();
+      if (autoGenerate) {
+        await fetchNewsHeadlines();
+      }
       await fetchSavedArticles();
     };
 
@@ -49,7 +52,7 @@ const Home = () => {
     const interval = setInterval(fetchNewsHeadlines, 300000); // 5 minutes
 
     return () => clearInterval(interval);
-  }, []);
+  }, [autoGenerate]);
 
   const handleExpandArticle = (index) => {
     setExpandedArticle(index === expandedArticle ? null : index);
@@ -60,17 +63,51 @@ const Home = () => {
     // Implement your logic to publish to video
   };
 
+  const handleDeleteArticle = async (article) => {
+    try {
+      await fetch(`/api/articles?url=${encodeURIComponent(article.url)}`, {
+        method: "DELETE",
+      });
+      fetchSavedArticles();
+    } catch (error) {
+      console.error("Error deleting article:", error);
+    }
+  };
+
+  const handleAutoGenerateToggle = () => {
+    setAutoGenerate(!autoGenerate);
+  };
+
   return (
     <div className="p-6 bg-gray-900 text-white min-h-screen">
       <h1 className="text-3xl font-bold mb-6">News Headlines</h1>
+      <div className="mb-6">
+        <label className="flex items-center">
+          <input
+            type="checkbox"
+            checked={autoGenerate}
+            onChange={handleAutoGenerateToggle}
+            className="mr-2"
+          />
+          Auto-generate videos
+        </label>
+      </div>
       <ul>
         {articles.map((article, index) => (
-          <li key={index} className="mb-4">
+          <li
+            key={index}
+            className={`mb-4 border border-gray-700 rounded-lg p-4 ${
+              expandedArticle === index ? "bg-gray-800" : "bg-gray-900"
+            } hover:bg-gray-800 transition-colors`}
+          >
             <div
               onClick={() => handleExpandArticle(index)}
-              className="cursor-pointer"
+              className="cursor-pointer flex justify-between items-center"
             >
               <h2 className="text-xl font-semibold">{article.title}</h2>
+              <span className="text-2xl font-bold">
+                {expandedArticle === index ? "-" : "+"}
+              </span>
             </div>
             {expandedArticle === index && (
               <div className="mt-2">
@@ -95,7 +132,7 @@ const Home = () => {
                   <img
                     src={article.urlToImage}
                     alt={article.title}
-                    className="mt-2 w-full"
+                    className="mt-2 w-full max-h-64 object-contain"
                   />
                 )}
                 <p className="mt-2">
@@ -105,12 +142,20 @@ const Home = () => {
                 <p className="mt-2">
                   <strong>Content:</strong> {article.content}
                 </p>
-                <button
-                  onClick={() => handlePublishToVideo(article)}
-                  className="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                >
-                  Publish to Video
-                </button>
+                <div className="flex space-x-2 mt-4">
+                  <button
+                    onClick={() => handlePublishToVideo(article)}
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                  >
+                    Publish to Video
+                  </button>
+                  <button
+                    onClick={() => handleDeleteArticle(article)}
+                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                  >
+                    Delete Article
+                  </button>
+                </div>
               </div>
             )}
           </li>

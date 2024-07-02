@@ -66,3 +66,12 @@ input[type="text"] {
   font-size: 16px;
   margin-top: 10px;
 }
+
+/* globals.css */
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+button {
+  transition: background-color 0.3s;
+}
