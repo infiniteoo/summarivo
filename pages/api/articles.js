@@ -3,6 +3,9 @@ import path from "path";
 import axios from "axios";
 import cheerio from "cheerio";
 import OpenAI from "openai";
+import { synthesizeSpeech } from "../../utils/polly";
+import { generateImages } from "../../utils/imageGeneration";
+import { Worker } from "worker_threads";
 
 const filePath = path.resolve("data", "articles.json");
 const openai = new OpenAI({
@@ -84,30 +87,116 @@ const generateSummaryScript = async (newArticle) => {
   }
 };
 
-const textToSpeech = async (scriptSegments) => {
+const textToSpeech = async (scriptSegments, audioFolder) => {
   // loop through scriptSegments and use Amazon Polly to generate an audio file
-  const audioFilePaths = [];
+
   scriptSegments.forEach(async (segment, index) => {
-    // Placeholder: Use Amazon Polly to generate an audio file from the script
-    const audioFile = await generateVO(segment);
-    const audioFilePath = `audio-${index}.mp3`;
-    audioFilePaths.push(audioFilePath);
+    const { audioBuffer, audioDataURI } = await synthesizeSpeech(segment);
+    const segmentNumber = index + 1;
+    const audioName = `segment-${segmentNumber
+      .toString()
+      .padStart(2, "0")}.mp3`;
+    const audioPath = path.join(audioFolder, audioName);
+    fs.writeFileSync(audioPath, audioBuffer);
   });
 
   return "Generated audio file path";
 };
 
-const generateImages = async (query) => {
+const generatePics = async (scriptSegments, imagesFolder, newArticle) => {
   // Placeholder: Use Google Custom Search API or AI to generate images
-  return ["Generated image URLs"];
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+  scriptSegments.forEach(async (segmentText, index) => {
+    const imageUrls = await generateImages(segmentText, 1, newArticle);
+
+    imageUrls.forEach((imageUrl, index) => {
+      if (imageUrl) {
+        try {
+          const segmentNumber = index + 1;
+
+          const suffix = alphabet[index % alphabet.length];
+
+          const imageName = `segment-${segmentNumber
+            .toString()
+            .padStart(2, "0")}${suffix}.png`;
+
+          const imagePath = path.join(imagesFolder, imageName);
+          const base64Data = imageUrl;
+          if (!base64Data) {
+            throw new Error("Invalid base64 data");
+          }
+
+          fs.writeFileSync(imagePath, Buffer.from(base64Data, "base64"));
+        } catch (error) {
+          console.error("Error saving image:", error);
+        }
+      } else {
+        console.error("Received empty imageUrl");
+      }
+    });
+  });
 };
 
-const generateVideo = async (audioFilePath, images) => {
+const generateVideo = async (audioFolder, imagesFolder, videoFolder) => {
   // Placeholder: Use FFmpeg to generate a video from the audio and images
+  const audioFiles = fs
+    .readdirSync(path.join(audioFolder))
+    .filter((file) => file.endsWith(".mp3"))
+    .map((file) => path.join(audioFolder, file).replace(/\\/g, "/"));
+  console.log("audioFiles found for video generation: ", audioFiles);
+
+  const imageFiles = fs
+    .readdirSync(path.join(imagesFolder))
+    .filter((file) => file.endsWith(".jpg") || file.endsWith(".png"))
+    .map((file) => path.join(imagesFolder, file).replace(/\\/g, "/"));
+  console.log("imageFiles found for video generation: ", imageFiles);
+
+  const currentDate = new Date();
+  const formattedDate = currentDate
+    .toISOString()
+    .replace(/T/, "_")
+    .replace(/\..+/, "")
+    .replace(/:/g, "-");
+
+  const videoFileName = `generated-video-${formattedDate}.mp4`;
+  const videoFilePath = path
+    .join(videoFolder, videoFileName)
+    .replace(/\\/g, "/");
+  console.log("videoFilePath: ", videoFilePath);
+
+  const worker = new Worker(
+    path.join(process.cwd(), "utils", "ffmpegWorker.js"),
+    {
+      workerData: { audioFiles, imageFiles, videoFilePath },
+    }
+  );
+
+  worker.on("message", (message) => {
+    if (message.error) {
+      console.error("FFmpeg error:", message.error);
+      return res.status(500).json({ error: "Error generating video" });
+    }
+
+    console.log("Video generation complete, message: ", message);
+    res.status(200).json({ videoFileName: `${videoFileName}` });
+  });
+
+  worker.on("error", (err) => {
+    console.error("Worker error:", err);
+    res.status(500).json({ error: "Error generating video" });
+  });
+
+  worker.on("exit", (code) => {
+    if (code !== 0) {
+      console.error(`Worker stopped with exit code ${code}`);
+      res.status(500).json({ error: "Error generating video" });
+    }
+  });
   return "Generated video file path";
 };
 
-const generateThumbnail = async (videoFilePath) => {
+const generateThumbnail = async (imagesFolder, thumbnailFolder) => {
   // Placeholder: Use FFmpeg to generate a thumbnail for the video
   return "Generated thumbnail file path";
 };
@@ -145,27 +234,31 @@ export default async function handler(req, res) {
 
         // create project files and folders
         // create a folder for the project
-        const projectFolder = path.resolve("projects", newArticle.publishedAt);
+        const projectFolder = path.join(
+          process.cwd,
+          "projects",
+          newArticle.source.name + "_" + newArticle.publishedAt
+        );
         await fs.mkdir(projectFolder);
 
         // create a folder for the audio files
-        const audioFolder = path.resolve(projectFolder, "audio");
+        const audioFolder = path.join(projectFolder, "audio");
         await fs.mkdir(audioFolder);
 
         // create a folder for the images
-        const imagesFolder = path.resolve(projectFolder, "images");
+        const imagesFolder = path.join(projectFolder, "images");
         await fs.mkdir(imagesFolder);
 
         // create a folder for the script files
-        const scriptFolder = path.resolve(projectFolder, "script");
+        const scriptFolder = path.join(projectFolder, "script");
         await fs.mkdir(scriptFolder);
 
         // create a folder for the video files
-        const videoFolder = path.resolve(projectFolder, "video");
+        const videoFolder = path.join(projectFolder, "video");
         await fs.mkdir(videoFolder);
 
         // create a folder for the thumbnail files
-        const thumbnailFolder = path.resolve(projectFolder, "thumbnail");
+        const thumbnailFolder = path.join(projectFolder, "thumbnail");
         await fs.mkdir(thumbnailFolder);
 
         // Generate summary/script of the article
@@ -181,16 +274,16 @@ export default async function handler(req, res) {
           .filter((p) => p.trim() !== "");
 
         // Use Amazon Polly to generate an audio file from the script
-        const audioFilePath = await textToSpeech(scriptSegments);
+        await textToSpeech(scriptSegments, audioFolder);
 
         // Generate images using Google Custom Search API or AI
-        const images = await generateImages(newArticle.title);
+        await generatePics(scriptSegments, imagesFolder, newArticle);
 
         // Use FFmpeg to generate a video from the audio and images
-        const videoFilePath = await generateVideo(audioFilePath, images);
+        await generateVideo(audioFolder, imagesFolder, videoFolder);
 
         // Generate a thumbnail for the video
-        const thumbnailFilePath = await generateThumbnail(videoFilePath);
+        await generateThumbnail(imagesFolder, thumbnailFolder);
 
         // Upload the video and thumbnail to YouTube
         const youtubeURL = await uploadToYouTube(
