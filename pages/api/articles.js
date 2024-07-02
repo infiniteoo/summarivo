@@ -35,7 +35,20 @@ const fetchFullArticleContent = async (url) => {
   try {
     const { data } = await axios.get(url);
     const $ = cheerio.load(data);
-    return $("article").text();
+
+    // Extract the text content of the article
+    let articleContent = $("article").text();
+
+    // Remove excess whitespace (newlines, tabs, multiple spaces)
+    articleContent = articleContent
+      .replace(/[\r\n\t]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+
+    // Remove URLs
+    articleContent = articleContent.replace(/https?:\/\/[^\s]+/g, "");
+
+    return articleContent;
   } catch (error) {
     console.error("Error fetching full article:", error);
     return null;
@@ -49,7 +62,7 @@ const generateSummaryScript = async (newArticle) => {
   const source = newArticle.source.name;
 
   const prompt = `
-        From the following news article, summarize the content into a script for a short video that will be narrated by a voiceover artist. The video will be about 60 seconds long and will include relevant images and animations to accompany the narration. Do not include any cues, titles, or instructions in the script.  Only return the words for the narrator to read. The tone should be engaging and informative. The script should be written in a conversational style. Please make sure to include all the important details and key points from the article. At the beginning of the script, please include the following information: the title of the article, the author, and the source. Here is the source: ${source}. Here is the title: ${title}. Here is the author or authors: ${author}. Here is the article: ${article}`;
+        From the following news article, summarize the content into a script for a short video that will be narrated by a voiceover artist. The video will be about 30-45 seconds long and will include relevant images and animations to accompany the narration. Do not include any cues, titles, or instructions in the script.  Only return the words for the narrator to read. The tone should be engaging and informative. The script should be written in a conversational style. Please make sure to include all the important details and key points from the article. At the beginning of the script, please include the following information: the title of the article, the author, and the source. Here is the source: ${source}. Here is the title: ${title}. Here is the author or authors: ${author}. Here is the article: ${article}`;
 
   try {
     const completion = await openai.chat.completions.create({
