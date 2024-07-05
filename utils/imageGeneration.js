@@ -7,9 +7,9 @@ const openai = new OpenAI({
   dangerouslyAllowBrowser: true,
 });
 
-export async function generateImages(segmentText, count, newArticle) {
+export async function generateImages(segmentText, count, articleToRender) {
   try {
-    const prompt = `You will be generating an image for a news story with the title: "${newArticle.title}" and description "${newArticle.description}". The story is segmented into smaller parts, and this image will cover this part of the story: "${segmentText}". The image should be related to the story and should be visually appealing.  Make the image as visually realistic as possible. If your prompt calls for a specific celebrity, public figure, or trademarked/copyrighted brand, please generate a lookalike image that will not cause any legal infractions.`;
+    const prompt = `You will be generating an image for a news story with the title: "${articleToRender.title}" and description "${articleToRender.description}". The story is segmented into smaller parts, and this image will cover this part of the story: "${segmentText}". The image should be related to the story and should be visually appealing.  Make the image as visually realistic as possible. If your prompt calls for a specific celebrity, public figure, or trademarked/copyrighted brand, please generate a lookalike image that will not cause any legal infractions.`;
 
     const response = await openai.images.generate({
       model: "dall-e-3",

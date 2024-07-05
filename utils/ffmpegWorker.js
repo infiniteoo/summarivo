@@ -1,10 +1,10 @@
 const { parentPort, workerData } = require("worker_threads");
 const { spawn } = require("child_process");
 
-const { audioFiles, imageFiles, videoFilePath } = workerData;
+const { audioFiles, imageFiles, outputFilePath } = workerData;
 console.log("audioFiles: ", audioFiles);
 console.log("imageFiles: ", imageFiles);
-console.log("videoFilePath: ", videoFilePath);
+console.log("outputFilePath: ", outputFilePath);
 
 // Generate filter_complex for FFmpeg
 const generateFilterComplex = () => {
@@ -25,9 +25,6 @@ const generateFilterComplex = () => {
     const imageIndex = audioFiles.length + index;
 
     // Randomly choose pan left or pan right effect
-    // const panEffect = Math.random() < 0.5 ? "panleft" : "panright";
-
-    // randomly choose pan left, pan right, zoom in or zoom out effect
     const panEffect =
       Math.random() < 0.2
         ? "panleft"
@@ -45,29 +42,29 @@ const generateFilterComplex = () => {
       console.log("pan left effect");
       // Pan left effect (start zoomed in and pan to the left)
       filterComplexParts.push(
-        `[${imageIndex}:v]zoompan=z='if(lte(zoom,1.0),1.5,max(1.0,zoom-0.0015))':d=125:x='if(lte(zoom,1.0),iw/2+(iw/zoom/2),x-4)':y='ih/2-(ih/zoom/2)'[v${index}]`
+        `[${imageIndex}:v]scale=1920:1080,setsar=1,zoompan=z='if(lte(zoom,1.0),1.5,max(1.0,zoom-0.0015))':d=125:x='if(lte(zoom,1.0),iw/2+(iw/zoom/2),x-4)':y='ih/2-(ih/zoom/2)'[v${index}]`
       );
     } else if (panEffect === "panright") {
       console.log("index: ", index);
       console.log("pan right effect");
       // Pan right effect (start zoomed in and pan to the right)
       filterComplexParts.push(
-        `[${imageIndex}:v]zoompan=z='if(lte(zoom,1.0),1.5,max(1.0,zoom-0.0015))':d=125:x='if(lte(zoom,1.0),iw/2-(iw/zoom/2),x+4)':y='ih/2-(ih/zoom/2)'[v${index}]`
+        `[${imageIndex}:v]scale=1920:1080,setsar=1,zoompan=z='if(lte(zoom,1.0),1.5,max(1.0,zoom-0.0015))':d=125:x='if(lte(zoom,1.0),iw/2-(iw/zoom/2),x+4)':y='ih/2-(ih/zoom/2)'[v${index}]`
       );
     } else if (panEffect === "zoomin") {
-      // zoom in
+      // Zoom in
       filterComplexParts.push(
-        `[${imageIndex}:v]zoompan=z='if(lte(zoom,1.5),min(1.5,zoom+0.0015),zoom)':d=125:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'[v${index}]`
+        `[${imageIndex}:v]scale=1920:1080,setsar=1,zoompan=z='if(lte(zoom,1.5),min(1.5,zoom+0.0015),zoom)':d=125:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'[v${index}]`
       );
     } else if (panEffect === "zoomout") {
-      // zoom out
+      // Zoom out
       filterComplexParts.push(
-        `[${imageIndex}:v]zoompan=z='if(lte(zoom,1.0),1.5,max(1.0,zoom-0.0015))':d=125:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'[v${index}]`
+        `[${imageIndex}:v]scale=1920:1080,setsar=1,zoompan=z='if(lte(zoom,1.0),1.5,max(1.0,zoom-0.0015))':d=125:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'[v${index}]`
       );
     } else {
       // Static effect (no pan)
       filterComplexParts.push(
-        `[${imageIndex}:v]zoompan=z='if(lte(zoom,2.0),2,max(2.0,zoom-0.0015))':d=125:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'[v${index}]`
+        `[${imageIndex}:v]scale=1920:1080,setsar=1,zoompan=z='if(lte(zoom,2.0),2,max(2.0,zoom-0.0015))':d=125:x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'[v${index}]`
       );
     }
 
@@ -98,6 +95,8 @@ const ffmpegArgs = [
   "[outa]",
   "-s",
   "1920x1080", // Set output resolution to 1920x1080
+  "-pix_fmt",
+  "yuv420p", // Set pixel format
   "-c:v",
   "libx264", // Output video codec
   "-preset",
@@ -106,11 +105,9 @@ const ffmpegArgs = [
   "18", // Set constant rate factor for quality (lower means better quality)
   "-c:a",
   "aac", // Output audio codec (AAC)
-  "-strict",
-  "experimental", // Experimental AAC encoder
   "-b:a",
   "192k", // Bitrate for audio
-  videoFilePath, // Output video file path
+  outputFilePath, // Output video file path
 ];
 
 console.log("Running FFmpeg with arguments: ", ffmpegArgs.join(" "));
@@ -132,7 +129,7 @@ ffmpeg.on("error", (err) => {
 
 ffmpeg.on("close", (code) => {
   if (code === 0) {
-    parentPort.postMessage({ videoFilePath });
+    parentPort.postMessage({ outputFilePath });
   } else {
     parentPort.postMessage({ error: `FFmpeg exited with code ${code}` });
   }

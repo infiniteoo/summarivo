@@ -17,7 +17,7 @@ export const synthesizeSpeech = async (text) => {
     OutputFormat: "mp3",
     Text: text,
     Engine: "neural",
-    VoiceId: "Kevin", // Kevin, young male boy
+    VoiceId: "Danielle",
   };
 
   try {

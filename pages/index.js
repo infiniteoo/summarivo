@@ -60,7 +60,13 @@ const Home = () => {
 
   const handlePublishToVideo = (article) => {
     console.log("Publishing article to video:", article);
-    // Implement your logic to publish to video
+    fetch("/api/generate-video", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(article),
+    });
   };
 
   const handleDeleteArticle = async (article) => {
