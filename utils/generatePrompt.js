@@ -1,0 +1,5 @@
+export const generatePrompt = (source, title, author, article) => {
+  return `
+      From the following news article, summarize the content into a script for a short video that will be narrated by a voiceover artist. The video will be about 60 seconds long and will include relevant images and animations to accompany the narration. Please return three to four paragraphs. Do not include any cues, titles, or instructions in the script. Only return the words for the narrator to read. The tone should be engaging and informative. The script should be written in a conversational style. Please make sure to include all the important details and key points from the article. At the beginning of the script, please include the following information: the title of the article, the author, and the source. Return response in JSON format. The first entry in the array should be the script. The second key in the array should be a few word summary to use as a google image search. Here is the source: ${source}. Here is the title: ${title}. Here is the author or authors: ${author}. Here is the article: ${article}.
+    `;
+};
