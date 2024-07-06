@@ -1,9 +1,6 @@
-import fs from "fs";
 import path from "path";
-
 import { fetchGoogleImage } from "@/utils/googleImageSearch";
-import { fetchImageFromUrl } from "@/utils/fetchImageFromUrl";
-import { generateImages } from "@/utils/imageGeneration";
+import { fetchAndSaveImage, generateAndSaveImage } from "@/utils/imageUtils";
 
 export const generatePics = async (
   scriptSegments,
@@ -11,50 +8,44 @@ export const generatePics = async (
   articleToRender,
   scriptSummary
 ) => {
-  const urlToImage = articleToRender.urlToImage;
+  const { urlToImage } = articleToRender;
   const images = [];
 
-  for (let i = 0; i < scriptSegments.length; i++) {
-    let imagePath = path.join(imagesFolder, `segment-${i + 1}.png`);
+  const getImageForSegment = async (segmentIndex, segmentText, summary) => {
+    const imagePath = path.join(
+      imagesFolder,
+      `segment-${segmentIndex + 1}.png`
+    );
 
-    if (i % 3 === 0) {
+    if (segmentIndex % 3 === 0) {
       // Use urlToImage for the first segment and every third segment
       if (urlToImage) {
-        await fetchImageFromUrl(urlToImage, imagePath);
+        await fetchAndSaveImage(urlToImage, imagePath);
       } else {
-        // Fallback to AI generated image if urlToImage is not available
-        const imageForSegment = await generateImages(
-          scriptSegments[i],
-          1,
-          articleToRender
-        );
-        fs.writeFileSync(imagePath, Buffer.from(imageForSegment[0], "base64"));
+        await generateAndSaveImage(segmentText, imagePath, articleToRender);
       }
-    } else if (i % 3 === 1) {
+    } else if (segmentIndex % 3 === 1) {
       // Use Google Custom Search for the second segment and every third segment after that
-
-      const googleImage = await fetchGoogleImage(scriptSummary, i);
+      const googleImage = await fetchGoogleImage(summary, segmentIndex);
       if (googleImage) {
-        await fetchImageFromUrl(googleImage, imagePath);
+        await fetchAndSaveImage(googleImage, imagePath);
       } else {
-        // Fallback to AI generated image if Google Custom Search fails
-        const imageForSegment = await generateImages(
-          scriptSegments[i],
-          1,
-          articleToRender
-        );
-        fs.writeFileSync(imagePath, Buffer.from(imageForSegment[0], "base64"));
+        await generateAndSaveImage(segmentText, imagePath, articleToRender);
       }
     } else {
       // Use AI generated image for the third segment and every third segment after that
-      const imageForSegment = await generateImages(
-        scriptSegments[i],
-        1,
-        articleToRender
-      );
-      fs.writeFileSync(imagePath, Buffer.from(imageForSegment[0], "base64"));
+      await generateAndSaveImage(segmentText, imagePath, articleToRender);
     }
 
+    return imagePath;
+  };
+
+  for (let i = 0; i < scriptSegments.length; i++) {
+    const imagePath = await getImageForSegment(
+      i,
+      scriptSegments[i],
+      scriptSummary
+    );
     images.push(imagePath);
   }
 
