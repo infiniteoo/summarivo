@@ -401,5 +401,499 @@
     "urlToImage": "https://gdb.voanews.com/01000000-0aff-0242-6a80-08dc96f4ac8c_w1200_r1.jpg",
     "publishedAt": "2024-06-30T22:05:00Z",
     "content": null
+  },
+  {
+    "source": {
+      "id": null,
+      "name": "The Boston Globe"
+    },
+    "author": null,
+    "title": "Amtrak cancels train service between Boston, N.Y. - The Boston Globe",
+    "description": "The rail service cited electrical problems and said it was working with affected travelers to rebook their trips and would waive additional charges.",
+    "url": "https://www.bostonglobe.com/2024/07/06/metro/amtrak-boston-new-york-cancalled-malfunction/",
+    "urlToImage": "https://bostonglobe-prod.cdn.arcpublishing.com/resizer/FiPDscbNY5Cn4vKcuwvfDx0jW-Q=/506x0/cloudfront-us-east-1.images.arcpublishing.com/bostonglobe/UZPCJ6YFK76P7DSECRKMCJLQ3M.jpg",
+    "publishedAt": "2024-07-07T03:56:15Z",
+    "content": "Amtrak train service between Boston and New York was restored late Saturday after a power outage on the tracks led the rail service to cancel trains along the busy northeast corridor for most of the … [+1790 chars]"
+  },
+  {
+    "source": {
+      "id": "cnn",
+      "name": "CNN"
+    },
+    "author": "Eyad Kourdi, Kareem El Damanhoury, Lauren Izso",
+    "title": "Israeli attack kills at least 16 at UNRWA school for the displaced in Gaza, ministry says - CNN",
+    "description": "The Israeli military says militants were operating in the area. A displaced man at the school says children are among the injured.",
+    "url": "https://www.cnn.com/2024/07/06/middleeast/israeli-attack-unwra-school-gaza-intl-latam/index.html",
+    "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2160282494.jpg?c=16x9&q=w_800,c_fill",
+    "publishedAt": "2024-07-07T03:49:00Z",
+    "content": "An Israeli attack has killed at least 16 Palestinians and injured 50 others at UNRWAs Al-Jaouni school sheltering displaced people in al-Nuseirat camp in central Gaza, the Palestinian Ministry of Hea… [+3250 chars]"
+  },
+  {
+    "source": {
+      "id": null,
+      "name": "BBC News"
+    },
+    "author": null,
+    "title": "Election fallout: deep shifts in Muslim and Jewish voting - BBC.com",
+    "description": "In the 2024 UK general election, Labour suffered some surprise seat losses over its stance on Gaza.",
+    "url": "https://www.bbc.com/news/articles/c3g37mk7vxlo",
+    "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/f8cd/live/e96e0c70-3ba9-11ef-bbe0-29f79e992ddd.png",
+    "publishedAt": "2024-07-07T02:48:37Z",
+    "content": "By Aleem Maqbool, Religion editor\r\nHowever big the headline change in the vote between the past two elections, drill down into two demographic pockets of Britain and you find staggering shifts.\r\nIt a… [+13354 chars]"
+  },
+  {
+    "source": {
+      "id": null,
+      "name": "DW (English)"
+    },
+    "author": "Deutsche Welle",
+    "title": "Scientists re-emerge after a year in Mars simulation project - DW (English)",
+    "description": "The two women and two men spent the last 378 days in Houston's Mars Dune Alpha habitat, designed to mimic Red Planet conditions. They spent the year conducting \"Marswalks\" and operating under \"additional stressors.\"",
+    "url": "https://www.dw.com/en/scientists-re-emerge-after-a-year-in-mars-simulation-project/a-69585838",
+    "urlToImage": "https://static.dw.com/image/69585856_6.jpg",
+    "publishedAt": "2024-07-07T02:10:57Z",
+    "content": "After a year, four scientists in the United States on Saturday ended an experiment that simulated life on Mars.\r\nTo loud applause, the four volunteers left NASA-built Mars Dune Alpha, where they had … [+2096 chars]"
+  },
+  {
+    "source": {
+      "id": null,
+      "name": "Hollywood Reporter"
+    },
+    "author": "Mike Barnes",
+    "title": "Producer Jon Landau, James Cameron’s Right-Hand Man on ‘Titanic’ and the ‘Avatar’ Films, Dies at 63 - Hollywood Reporter",
+    "description": "In addition to producing three of the highest-grossing movies in history, the problem-solving Oscar winner guided ‘Honey, I Shrunk the Kids’ and ‘Dick Tracy’ and was an executive at Fox.",
+    "url": "http://www.hollywoodreporter.com/movies/movie-news/jon-landau-dead-titanic-avatar-1235940341/",
+    "urlToImage": "https://www.hollywoodreporter.com/wp-content/uploads/2024/05/Jon-Landau-Obit-Template-Headshot-Getty-H-2024.jpg?w=1296&h=730&crop=1",
+    "publishedAt": "2024-07-07T01:32:27Z",
+    "content": "Jon Landau, the Oscar-winning producer who made the dreams of James Cameron come to life by overcoming extreme logistical challenges to bring the filmmaker’s Titanic and Avatar blockbusters to the bi… [+10038 chars]"
+  },
+  {
+    "source": {
+      "id": "associated-press",
+      "name": "Associated Press"
+    },
+    "author": null,
+    "title": "Caitlin Clark rallies Fever past Liberty 83-78 with first triple-double by WNBA rookie - The Associated Press",
+    "description": "Caitlin Clark posted the first triple-double by a rookie in WNBA history to rally Indiana to an 83-78 victory over New York on Saturday at Gainbridge Fieldhouse, snapping the Fever’s nine-game losing streak to the Liberty. Clark finished with 19 points, 13 as…",
+    "url": "https://apnews.com/article/new-york-liberty-indiana-fever-wnba-9ab8ed4e87d43e8e214b20a164c5e8ff",
+    "urlToImage": "https://dims.apnews.com/dims4/default/6a2b6ea/2147483647/strip/true/crop/4228x2378+0+220/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F33%2F39%2F3f7609c0b6013df0f1960ddc0029%2Fb198b854c45d41b2aac28c2d33ff0930",
+    "publishedAt": "2024-07-07T00:50:00Z",
+    "content": "INDIANAPOLIS (AP) Caitlin Clark posted the first triple-double by a rookie in WNBA history to help rally Indiana to an 83-78 victory over New York on Saturday at Gainbridge Fieldhouse, snapping the F… [+4134 chars]"
+  },
+  {
+    "source": {
+      "id": null,
+      "name": "Eonline.com"
+    },
+    "author": null,
+    "title": "Riverdale's Vanessa Morgan Is Pregnant, Expecting Baby No. 2 - E! NEWS",
+    "description": "Riverdale alum Vanessa Morgan announced July 6 she is pregnant with her second child.",
+    "url": "https://www.eonline.com/news/1404655/riverdales-vanessa-morgan-is-pregnant-expecting-baby-no-2",
+    "urlToImage": "https://akns-images.eonline.com/eol_images/Entire_Site/202466/rs_1200x1200-240706165223-1200-vanessa-morgan-critics-choice-awards-cjh-011424.jpg?fit=around%7C1080:1080&output-quality=90&crop=1080:1080;center,top",
+    "publishedAt": "2024-07-07T00:24:16Z",
+    "content": "Riverdale alum Vanessa Morgan is expanding her family.\r\nThe 32-year-old is pregnant and due to soon give birth to her second baby, her first with boyfriend James Karnik. On July 6, the actress shared… [+838 chars]"
+  },
+  {
+    "source": {
+      "id": "cbs-news",
+      "name": "CBS News"
+    },
+    "author": null,
+    "title": "Hamas appears to clear way for possible cease-fire deal with Israel after reportedly dropping key demand - CBS News",
+    "description": "The militant group – which controlled Gaza before triggering the war with an Oct. 7 attack on Israel – has reportedly given initial approval of the cease-fire deal.",
+    "url": "https://www.cbsnews.com/news/hamas-appears-clear-way-possible-ceasefire-deal-israel-reportedly-dropping-key-demand-egypt/",
+    "urlToImage": "https://assets1.cbsnewsstatic.com/hub/i/r/2024/07/06/9b17e522-ad5c-4a8a-a308-960215c26ade/thumbnail/1200x630/60a646d8a14628d3ca8ffcbb08e28f54/ap24187535037597.jpg?v=57e8061b2038d609da26e467de5ddfb8",
+    "publishedAt": "2024-07-07T00:13:54Z",
+    "content": "There is new hope for a cease-fire deal in the Middle East after Hamas responded to a U.S.-backed proposal for a phased deal in Gaza.\r\nThe militant group – which controlled Gaza before triggering the… [+6868 chars]"
+  },
+  {
+    "source": {
+      "id": "fox-news",
+      "name": "Fox News"
+    },
+    "author": "Brie Stimson",
+    "title": "Mob ravages California mini-mart during flash robbery near airport, shocking video shows - Fox News",
+    "description": "Dozens of thieves caused hundreds of thousands of dollars in damage and losses after ransacking the store near San Francisco Bay Oakland International Airport.",
+    "url": "https://www.foxnews.com/us/mob-ravages-california-mini-mart-during-flash-robbery-airport-shocking-video-shows",
+    "urlToImage": "https://static.foxnews.com/foxnews.com/content/uploads/2024/07/oakland-gas-sation-robbery.jpg",
+    "publishedAt": "2024-07-07T00:08:00Z",
+    "content": "Dozens of people ransacked a gas station mini-mart near the San Francisco Bay Oakland International Airport in Oakland, California, early Friday morning, leaving the store destroyed. \r\nShocking surve… [+1432 chars]"
+  },
+  {
+    "source": {
+      "id": "cbs-news",
+      "name": "CBS News"
+    },
+    "author": "Cara Tabachnick",
+    "title": "4 killed, 3 injured in mass shooting at birthday pool party in Florence, Kentucky - CBS News",
+    "description": "The suspect fled the party, then shot and killed himself after a car chase, the Florence Police Department said.",
+    "url": "https://www.cbsnews.com/news/mass-shooting-at-birthday-pool-party-in-florence-kentucky/",
+    "urlToImage": "https://assets2.cbsnewsstatic.com/hub/i/r/2024/07/03/72cdb0f5-f0ff-4e52-997a-f6b984598619/thumbnail/1200x630/36114f37cfbe1df583a1493d1c5153f9/gettyimages-1477626349.jpg?v=57e8061b2038d609da26e467de5ddfb8",
+    "publishedAt": "2024-07-06T23:37:42Z",
+    "content": "Four people were fatally shot and three people were injured in a mass shooting in Kentucky on Saturday, said the Florence Police Department.\r\nOfficers responded to a private residence at 2:51 a.m. lo… [+2828 chars]"
+  },
+  {
+    "source": {
+      "id": null,
+      "name": "Houston Chronicle"
+    },
+    "author": "Hana Ikramuddin",
+    "title": "Harris County, 120 others under disaster declaration ahead of Beryl - Houston Chronicle ",
+    "description": "The added regions, which include Harris County, came a day after Patrick initially flagged 40 counties. Patrick is warning Texans to prepare.",
+    "url": "https://www.houstonchronicle.com/news/houston-weather/article/dan-patrick-emergency-declaration-beryl-19558326.php",
+    "urlToImage": "https://s.hdnux.com/photos/01/40/50/21/25330757/5/rawImage.jpg",
+    "publishedAt": "2024-07-06T23:13:50Z",
+    "content": "Beryls latest forecast track from the National Hurricane Center, as of 4 p.m. Saturday shows a northerly path that leads to the Gulf Coast in Southeast Texas.\r\nNational Hurricane Center\r\nShown is Tro… [+2462 chars]"
+  },
+  {
+    "source": {
+      "id": "fox-news",
+      "name": "Fox News"
+    },
+    "author": "Melissa Rudy",
+    "title": "Alzheimer’s on mother’s side of the family could increase disease risk, study finds - Fox News",
+    "description": "Having a mother with Alzheimer’s could lead to a higher risk of inherited disease than a paternal history, according to a recent study from Mass General Brigham. Researchers and doctors explain.",
+    "url": "https://www.foxnews.com/health/alzheimers-mothers-side-family-could-increase-disease-risk-study-finds",
+    "urlToImage": "https://static.foxnews.com/foxnews.com/content/uploads/2024/07/mother-alzheimers.jpg",
+    "publishedAt": "2024-07-06T23:05:00Z",
+    "content": "Join Fox News for access to this content\r\nYou have reached your maximum number of articles. Log in or create an account FREE of charge to continue reading.\r\nBy entering your email and pushing continu… [+5912 chars]"
+  },
+  {
+    "source": {
+      "id": null,
+      "name": "BBC News"
+    },
+    "author": null,
+    "title": "Last two migrants bound for Rwanda to be bailed, Home Office says - BBC.com",
+    "description": "New Prime Minister Keir Starmer confirms the scheme is now  \"dead and buried\".",
+    "url": "https://www.bbc.com/news/articles/c880y4yz8yvo",
+    "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/995d/live/a18ab470-3beb-11ef-b13c-b7ed4340d675.jpg",
+    "publishedAt": "2024-07-06T23:02:48Z",
+    "content": "The two last remaining migrants who are detained and waiting to be sent to Rwanda will be bailed in the coming days, the government has said.\r\nThe home secretary's spokesperson also revealed that a f… [+2281 chars]"
+  },
+  {
+    "source": {
+      "id": "espn",
+      "name": "ESPN"
+    },
+    "author": "Dave McMenamin",
+    "title": "Bronny James has 4 points in summer league debut for Lakers - ESPN",
+    "description": "Wearing jersey No. 9, Bronny James took his place in the Lakers' starting lineup and finished 2-of-9 for four points in his NBA summer league debut Saturday.",
+    "url": "https://www.espn.com/nba/story/_/id/40509590/bronny-james-4-points-summer-league-debut-lakers",
+    "urlToImage": "https://a3.espncdn.com/combiner/i?img=%2Fphoto%2F2024%2F0706%2Fr1355481_1296x729_16%2D9.jpg",
+    "publishedAt": "2024-07-06T23:00:00Z",
+    "content": "SAN FRANCISCO -- Bronny James made his NBA summer league debut Saturday and was surprised by the warm reception he received in the city where his father played some of his fiercest NBA Finals battles… [+4899 chars]"
+  },
+  {
+    "source": {
+      "id": "cnn",
+      "name": "CNN"
+    },
+    "author": "Hannah Rabinowitz",
+    "title": "Federal judge pauses some deadlines in Trump’s classified documents case after SCOTUS ruling - CNN",
+    "description": "A federal judge paused some filing deadlines in the classified documents case against former President Donald Trump in a brief order Saturday, and agreed to additional briefings on whether she should pause the case to consider what effect the Supreme Court’s …",
+    "url": "https://www.cnn.com/2024/07/06/politics/trump-classified-documents-scotus-ruling/index.html",
+    "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2157136512.jpg?c=16x9&q=w_800,c_fill",
+    "publishedAt": "2024-07-06T22:58:00Z",
+    "content": "A federal judge paused some filing deadlines in the classified documents case against former President Donald Trump in a brief order Saturday, and agreed to additional briefings on whether she should… [+2645 chars]"
+  },
+  {
+    "source": {
+      "id": null,
+      "name": "NPR"
+    },
+    "author": "",
+    "title": "Extreme heat grips West and East coasts, breaking daily highs - NPR",
+    "description": "The heat wave in the U.S. is far from over. This weekend, parts of the Pacific Northwest and Northeast are bearing the brunt of the heat with record-breaking temperatures.",
+    "url": "https://www.npr.org/2024/07/06/nx-s1-5031553/extreme-heat-west-east-coast",
+    "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/5000x2813+0+261/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2Ff6%2F74%2F8882955d4aa184149e0f14a4a47a%2Fgettyimages-2159867333.jpg",
+    "publishedAt": "2024-07-06T22:55:51Z",
+    "content": "Extreme heat continues to inflict wide swaths of the U.S. This weekend, the brunt of the hot temperatures is falling on the West Coast and parts of the East Coast.\r\nIn total, over 132 million people … [+2567 chars]"
+  },
+  {
+    "source": {
+      "id": "the-washington-post",
+      "name": "The Washington Post"
+    },
+    "author": "Tom Jackman, Michael Errigo",
+    "title": "Minnesota Vikings cornerback Khyree Jackson dies in Maryland car crash - The Washington Post",
+    "description": "Jackson, a cornerback for the Minnesota Vikings, died in a crash in Upper Marlboro Saturday, along with two of his Wise High School teammates Anthony Lytton Jr. and Isaiah Hazel.",
+    "url": "https://www.washingtonpost.com/dc-md-va/2024/07/06/khyree-jackson-minnesota-vikings-dead/",
+    "urlToImage": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/AFUJVHGA6ZCG6W7AVN5TUB7Q2U.jpg&w=1440",
+    "publishedAt": "2024-07-06T22:37:27Z",
+    "content": "Three former high school state champion football players from Prince Georges County including one just drafted into the NFL were killed early Saturday when a speeding and possibly alcohol-impaired dr… [+6053 chars]"
+  },
+  {
+    "source": {
+      "id": null,
+      "name": "Entertainment Tonight"
+    },
+    "author": "Miguel A. Melendez",
+    "title": "Travis Kelce Catches Taylor Swift's Final Eras Tour Show in Amsterdam Flanked by Patrick and Brittany Mahomes - Entertainment Tonight",
+    "description": "Travis Kelce, Patrick and Brittany Mahomes were spotted in suite for Taylor Swift's final Eras Tour show in Amsterdam.",
+    "url": "https://www.etonline.com/travis-kelce-catches-taylor-swifts-final-eras-tour-show-in-amsterdam-flanked-by-patrick-and",
+    "urlToImage": "https://www.etonline.com/sites/default/files/styles/1280x720/public/images/2024-07/GettyImages-1538405518.jpg?h=b79b0a16",
+    "publishedAt": "2024-07-06T22:33:00Z",
+    "content": "Travis Kelce is giving credit where credit is due, or so it seems!\r\nAfter Patrick Mahomes said he takes \"some credit\" for Travis' relationship with Taylor Swift, the Kansas City Chiefs quarterback fo… [+3169 chars]"
+  },
+  {
+    "source": {
+      "id": "business-insider",
+      "name": "Business Insider"
+    },
+    "author": "Lauren Edmonds",
+    "title": "Ambanis throw a pre-wedding celebration with Justin Bieber performance - Business Insider",
+    "description": "Radhika Merchant and Anant Ambani, youngest son of Asia's richest man, will marry on July 12. Their lavish celebrations have made global headlines.",
+    "url": "https://www.businessinsider.com/ambani-pre-wedding-celebration-with-justin-bieber-performance-2024-7",
+    "urlToImage": "https://i.insider.com/6689c3fd1aace5b3ada4de39?width=1200&format=jpeg",
+    "publishedAt": "2024-07-06T22:26:00Z",
+    "content": null
+  },
+  {
+    "source": {
+      "id": "business-insider",
+      "name": "Business Insider"
+    },
+    "author": "Lauren Edmonds",
+    "title": "Ambanis throw a pre-wedding celebration with Justin Bieber performance - Business Insider",
+    "description": "Radhika Merchant and Anant Ambani, youngest son of Asia's richest man, will marry on July 12. Their lavish celebrations have made global headlines.",
+    "url": "https://www.businessinsider.com/ambani-pre-wedding-celebration-with-justin-bieber-performance-2024-7",
+    "urlToImage": "https://i.insider.com/6689c3fd1aace5b3ada4de39?width=1200&format=jpeg",
+    "publishedAt": "2024-07-06T22:26:00Z",
+    "content": null
+  },
+  {
+    "source": {
+      "id": "associated-press",
+      "name": "Associated Press"
+    },
+    "author": "BRIAN P. D. HANNON",
+    "title": "NASA crew in simulated Mars habitat emerge after a year - The Associated Press",
+    "description": "Four volunteer crew members who spent more than 12 months inside NASA’s first simulated Mars environment at Johnson Space Center in Houston have emerged from the artificial alien enviroment. Kelly Haston, Anca Selariu, Ross Brockwell and Nathan Jones entered …",
+    "url": "https://apnews.com/article/nasa-simulated-mars-habitat-exit-7fd7d511ca22016793d504b1a47f97ee",
+    "urlToImage": "https://dims.apnews.com/dims4/default/204efac/2147483647/strip/true/crop/2000x1125+0+0/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F9b%2F7c%2Facdb3c81c105c845d18f0b3ae89c%2F70bd8570b9ed4aa89e7d86e531ed8ec9",
+    "publishedAt": "2024-07-07T20:26:00Z",
+    "content": "The crew of a NASA mission to Mars emerged from their craft after a yearlong voyage that never left Earth.\r\nThe four volunteer crew members spent more than 12 months inside NASAs first simulated Mars… [+3433 chars]"
+  },
+  {
+    "source": {
+      "id": "cbs-news",
+      "name": "CBS News"
+    },
+    "author": "Alexandra Simon, Jessica MacAulay, CBS News Philadelphia Staff",
+    "title": "Biden says \"we must unite America again\" in speech at Philadelphia church before traveling to Harrisburg - CBS News",
+    "description": "President Biden spoke at Mt. Airy Church of God in Christ in northwest Philadelphia before traveling to Harrisburg Sunday afternoon.",
+    "url": "https://www.cbsnews.com/philadelphia/news/joe-biden-campaign-events-after-debate-philadelphia-harrisburg/",
+    "urlToImage": "https://assets1.cbsnewsstatic.com/hub/i/r/2024/07/07/535af550-8300-4a2e-a8d2-7ddd30fc5c44/thumbnail/1200x630/b75aa58c51de7a0f3d4303683813a467/ap24189582400222.jpg?v=57e8061b2038d609da26e467de5ddfb8",
+    "publishedAt": "2024-07-07T20:07:22Z",
+    "content": "PHILADELPHIA (CBS/AP) -- President Biden said Sunday that his goal is to \"unite America again\" during a speech at Mt. Airy Church of God in Christ in Northwest Philadelphia.\r\nMr. Biden's remarks came… [+4223 chars]"
+  },
+  {
+    "source": {
+      "id": "nbc-news",
+      "name": "NBC News"
+    },
+    "author": "Freddie Clayton",
+    "title": "France’s left-wing parties projected to finish first in parliamentary elections, keep far right at bay - NBC News",
+    "description": "A tense alliance between France’s centrist and leftist parties has kept the far-right National Rally party at bay, according to exit polls, with Prime Minister Gabriel Attal set to resign.",
+    "url": "https://www.nbcnews.com/news/world/france-far-right-fails-win-majority-rcna160586",
+    "urlToImage": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/rockcms/2024-07/240707-emmanuel-macron-vl-1254p-b3eae0.jpg",
+    "publishedAt": "2024-07-07T19:41:07Z",
+    "content": "A tense alliance between Frances centrist and leftist parties has kept the far-right National Rally party at bay, according to exit polls, with Prime Minister Gabriel Attal set to resign.\r\nIn a surpr… [+6744 chars]"
+  },
+  {
+    "source": {
+      "id": "axios",
+      "name": "Axios"
+    },
+    "author": "Axios",
+    "title": "Tropical Storm Beryl intensifying as it nears Texas with high winds, surge - Axios",
+    "description": null,
+    "url": "https://www.axios.com/2024/07/07/beryl-texas-hurricane-warnings-flooding",
+    "urlToImage": null,
+    "publishedAt": "2024-07-07T19:18:45Z",
+    "content": null
+  },
+  {
+    "source": {
+      "id": null,
+      "name": "Deadline"
+    },
+    "author": "Bruce Haring",
+    "title": "Leonardo DiCaprio Remembers ‘Titanic’ Producer Jon Landau - Deadline",
+    "description": "Titanic star Leonardo DiCaprio recalled the kindness of his 'Titanic' producer Jon Landau, who died at age 63.",
+    "url": "http://deadline.com/2024/07/leonardo-dicaprio-jon-landau-death-1236002871/",
+    "urlToImage": "https://deadline.com/wp-content/uploads/2023/08/MSDTITA_FE057.jpg?w=1024",
+    "publishedAt": "2024-07-07T19:08:00Z",
+    "content": "The remembrances of producer Jon Landau continued Sunday, including one from Titanic star Leonardo DiCaprio.\r\nLandau, producer on the Oscar-winning Titanic and Avatar, died Saturday at age 63, prompt… [+962 chars]"
+  },
+  {
+    "source": {
+      "id": null,
+      "name": "WLS-TV"
+    },
+    "author": null,
+    "title": "2024 NASCAR Chicago Street Race: Live updates - ABC7 Chicago - WLS-TV",
+    "description": "The 2024 NASCAR Chicago Street Race weekend is here. We have the latest live updates.",
+    "url": "https://abc7chicago.com/live-updates/2024-nascar-chicago-street-race-live-updates-on-closures-events-and-races-second-day-of-weekend-event/15021487/",
+    "urlToImage": "https://cdn.abcotvs.com/dip/images/14915988_060524-wls-nascar-chicago-2024-graphic-img.png?w=1600",
+    "publishedAt": "2024-07-07T19:08:00Z",
+    "content": "The premiere race of the NASCAR Chicago Street Race weekend is now underway.\r\nSome rain drizzles moved through the Chicago area and reached downtown just before the race start time. However, the weat… [+1087 chars]"
+  },
+  {
+    "source": {
+      "id": null,
+      "name": "Page Six"
+    },
+    "author": "Vanessa Serna",
+    "title": "Margot Robbie pregnant, expecting first baby with Tom Ackerley - Page Six",
+    "description": "The “Barbie” star, who wed the movie producer in December 2016, debuted her baby bump in a crop top Sunday while vacationing in Lake Como, Italy.",
+    "url": "https://pagesix.com/2024/07/07/parents/margot-robbie-pregnant-expecting-first-baby-with-tom-ackerley/",
+    "urlToImage": "https://pagesix.com/wp-content/uploads/sites/3/2024/07/85098118.jpg?quality=75&strip=all&w=1024",
+    "publishedAt": "2024-07-07T18:19:00Z",
+    "content": "Congratulations are in order for Margot Robbie.\r\nThe “Barbie” star is expecting her first child with her husband, Tom Ackerley, sources told People Sunday.\r\nRobbie debuted her baby bump in a white cr… [+3021 chars]"
+  },
+  {
+    "source": {
+      "id": "politico",
+      "name": "Politico"
+    },
+    "author": "POLITICO",
+    "title": "House Republicans request interview with White House physician - POLITICO",
+    "description": null,
+    "url": "https://www.politico.com/news/2024/07/07/house-republicans-biden-physician-00166725",
+    "urlToImage": null,
+    "publishedAt": "2024-07-07T18:15:00Z",
+    "content": null
+  },
+  {
+    "source": {
+      "id": null,
+      "name": "NPR"
+    },
+    "author": null,
+    "title": "Lewis Hamilton wins the British Grand Prix - NPR",
+    "description": "Hamilton's victory — by just 1.5 seconds — helped him become the first F1 driver to win on any track nine times. It also extended his F1 record to 104 wins.",
+    "url": "https://www.npr.org/2024/07/07/nx-s1-5032080/lewis-hamilton-british-grand-prix",
+    "urlToImage": "https://npr.brightspotcdn.com/dims3/default/strip/false/crop/3864x2174+0+202/resize/1400/quality/100/format/jpeg/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F03%2F28%2F66ae3e31482495ed5f6e1a1a2bdb%2Fap24189593319547.jpg",
+    "publishedAt": "2024-07-07T18:03:11Z",
+    "content": "SILVERSTONE, England Lewis Hamilton held off Max Verstappens late charge to win a thrilling British Grand Prix on Sunday and secure his first victory since the penultimate race of the 2021 season.\r\nH… [+3847 chars]"
+  },
+  {
+    "source": {
+      "id": null,
+      "name": "New York Post"
+    },
+    "author": "Associated Press",
+    "title": "Israeli protesters block highways, call for cease-fire to return hostages 9 months into war in Gaza - New York Post ",
+    "description": "Marking nine months since the war in Gaza started, Israeli protesters blocked highways across the country Sunday, calling on Prime Minister Benjamin Netanyahu to step down and pushing for a cease-f…",
+    "url": "https://nypost.com/2024/07/07/world-news/israeli-protesters-block-highways-call-for-cease-fire-to-return-hostages/",
+    "urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2024/07/newspress-collage-hg2l7bfnr-1720372223246.jpg?quality=75&strip=all&1720357850&w=1024",
+    "publishedAt": "2024-07-07T17:26:00Z",
+    "content": "TEL AVIV, Israel Marking nine months since the war in Gaza started, Israeli protesters blocked highways across the country Sunday, calling on Prime Minister Benjamin Netanyahu to step down and pushin… [+7000 chars]"
+  },
+  {
+    "source": {
+      "id": null,
+      "name": "New York Post"
+    },
+    "author": "Joe Marino, Jorge Fitz-Gibbon",
+    "title": "Masked gunman targets, shoots pair of youngsters at NYC McDonald's - New York Post ",
+    "description": "A masked gunman walked into a McDonald’s in The Bronx and fired at least six bullets at his targets — a 12-year-old and 13-year-old — before fleeing Saturday night, police and law…",
+    "url": "https://nypost.com/2024/07/07/us-news/masked-gunman-targets-shoots-pair-of-youngsters-at-nyc-mcdonalds/",
+    "urlToImage": "https://nypost.com/wp-content/uploads/sites/2/2024/07/12yo-13yo-shot-wounded-bronx-85091931.jpg?quality=75&strip=all&w=1024",
+    "publishedAt": "2024-07-07T16:46:00Z",
+    "content": "A masked gunman walked into a McDonald’s in The Bronx and fired at least six bullets at his targets — a 12-year-old and 13-year-old — before fleeing Saturday night, police and law-enforcement sources… [+1474 chars]"
+  },
+  {
+    "source": {
+      "id": null,
+      "name": "WLWT Cincinnati"
+    },
+    "author": "Daisy Kershaw",
+    "title": "Neighbors, friends remember loved ones killed in mass shooting at Florence birthday party Saturday - WLWT Cincinnati",
+    "description": "\"She was a beautiful person, in and out,\" said a friend of Melissa Parrett, one of four people who was shot and killed at a birthday party in Florence early Saturday morning.",
+    "url": "https://www.wlwt.com/article/florence-kentucky-birthday-party-mass-shooting-4-killed/61525457",
+    "urlToImage": "https://kubrick.htvapps.com/htv-prod-media.s3.amazonaws.com/images/florence-birthday-shooting-daisy-pkg-668abadc8fa4e.png?crop=0.995xw:1.00xh;0.00326xw,0&resize=1200:*",
+    "publishedAt": "2024-07-07T16:14:00Z",
+    "content": "FLORENCE, Ky. —What was supposed to be a celebration for a 21-year-old's birthday turned into a nightmare.\r\nJust before 3 a.m. on Saturday, police say Chase Garvey, 21, opened fire on a birthday part… [+1730 chars]"
+  },
+  {
+    "source": {
+      "id": null,
+      "name": "KETV Omaha"
+    },
+    "author": "Davon Taylor",
+    "title": "Record TSA screenings, flight delays across U.S. - KETV Omaha",
+    "description": "Expectations for travel are soaring above 3 million passengers, passing the previous record set just weeks ago",
+    "url": "https://www.ketv.com/article/record-breaking-travel-day-tsa-braces-for-busiest-screening-ever-after-holiday/61524553",
+    "urlToImage": "https://kubrick.htvapps.com/vidthumb/4b25a8d1-b27b-466e-a75d-db368f13f1f1/32204df3-9047-4abd-a822-55640cd1b47c.jpg?crop=1xw:1.0xh;center,top&resize=1200:*",
+    "publishedAt": "2024-07-07T16:09:00Z",
+    "content": "OMAHA, Neb. —As post-holiday celebrations wind down, millions of Americans are gearing up for travel by air and road, marking what experts predict to be the busiest day ever for TSA screenings. \r\nExp… [+921 chars]"
+  },
+  {
+    "source": {
+      "id": null,
+      "name": "Hindustan Times"
+    },
+    "author": "Arya Vaishnavi",
+    "title": "Biden faces calls to step aside as more Democrats lose faith in his candidacy: Report - Hindustan Times",
+    "description": "Representative Scott Peters, Democrat of California, said, “I have less and less confidence in this campaign’s ability to win this race.”",
+    "url": "https://www.hindustantimes.com/world-news/us-news/biden-faces-calls-to-step-aside-as-more-democrats-lose-faith-in-his-candidacy-report-101720365467516.html",
+    "urlToImage": "https://images.hindustantimes.com/img/2024/07/07/1600x900/Election-2024-Biden-1_1720228960717_1720367362156.jpg",
+    "publishedAt": "2024-07-07T15:53:16Z",
+    "content": "Joe Biden is actively trying to reverse the damage his candidacy sustained after the CNN debate debacle. The 81-year-old is facing new calls to step aside as more supporters are losing their faith in… [+1938 chars]"
+  },
+  {
+    "source": {
+      "id": null,
+      "name": "MacRumors"
+    },
+    "author": "Hartley Charlton",
+    "title": "Report: Apple Watch Series 10 to Offer Larger Screens and Faster Chip, but New Health Features in Trouble - MacRumors",
+    "description": "The Apple Watch Series 10 will feature a larger display and a new chip, but new health monitoring features for the device are now in question,...",
+    "url": "https://www.macrumors.com/2024/07/07/series-10-larger-screens-and-faster-chip/",
+    "urlToImage": "https://images.macrumors.com/t/XdaV_-3VoCGLtnbfoJldxfrJlPc=/1600x/article-new/2022/09/f1662570472.jpg",
+    "publishedAt": "2024-07-07T15:31:48Z",
+    "content": "The Apple Watch Series 10 will feature a larger display and a new chip, but new health monitoring features for the device are now in question, Bloomberg's Mark Gurman reports.\r\nIn the latest edition … [+2244 chars]"
+  },
+  {
+    "source": {
+      "id": "axios",
+      "name": "Axios"
+    },
+    "author": "Axios",
+    "title": "Rubio, Trump try to distance campaign from Project 2025 - Axios",
+    "description": null,
+    "url": "https://www.axios.com/2024/07/07/rubio-trump-distance-project-2025",
+    "urlToImage": null,
+    "publishedAt": "2024-07-07T15:31:36Z",
+    "content": null
+  },
+  {
+    "source": {
+      "id": null,
+      "name": "Hollywood Reporter"
+    },
+    "author": "Pamela McClintock",
+    "title": "Box Office: ‘Despicable Me 4’ Rules July 4th With $122M Opening, ‘MaXXXine’ Scares Up $6.7M - Hollywood Reporter",
+    "description": "Elsewhere, Angel Studios' 'Sound of Hope: the Son of Possum' couldn't replicate the success of last summer's sleeper hit 'Sound of Freedom.'",
+    "url": "http://www.hollywoodreporter.com/movies/movie-news/despicable-me-4-box-office-opening-july-4-1235940188/",
+    "urlToImage": "https://www.hollywoodreporter.com/wp-content/uploads/2024/07/2539_FP_00360A-H-2024.jpg?w=1296&h=730&crop=1",
+    "publishedAt": "2024-07-07T15:27:30Z",
+    "content": "Illumination and Universal’s Minions franchise isn’t getting any worse for the wear as Despicable Me 4 ruled the Fourth of July box office with an estimated five-day domestic opening of $122.6 millio… [+5276 chars]"
+  },
+  {
+    "source": {
+      "id": "fox-news",
+      "name": "Fox News"
+    },
+    "author": "Gabriel Hays",
+    "title": "Second local radio host admits to getting questions from Biden team ahead of interview with president - Fox News",
+    "description": "Another local radio host admitted to ABC News recently that he was given questions to ask President Biden before his interview with the world leader.",
+    "url": "https://www.foxnews.com/media/second-local-radio-host-admits-getting-questions-biden-team-interview-president",
+    "urlToImage": "https://static.foxnews.com/foxnews.com/content/uploads/2023/10/JOE-BIDEN-60-MINUTES-INTERVIEW.jpg",
+    "publishedAt": "2024-07-07T15:11:00Z",
+    "content": "Join Fox News for access to this content\r\nPlus special access to select articles and other premium content with your account - free of charge.\r\nBy entering your email and pushing continue, you are ag… [+3429 chars]"
   }
 ]

@@ -53,6 +53,7 @@ export const generateSummaryScript = async (articleToRender) => {
     rawScript = rawScript.replace("Title:", "");
     rawScript = rawScript.replace("Author:", "");
     rawScript = rawScript.replace("Source:", "");
+    rawScript = rawScript.replace("undefined", "");
 
     // Combine shorter segments into longer segments remove empty segments
     let segments = rawScript

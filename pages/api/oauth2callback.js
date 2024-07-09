@@ -8,8 +8,8 @@ async function handler(req, res) {
   const redirectUri = `${protocol}://${host}/api/oauth2callback`;
 
   const oauth2Client = new google.auth.OAuth2(
-    process.env.YOUTUBE_CLIENT_ID,
-    process.env.YOUTUBE_CLIENT_SECRET,
+    process.env.NEXT_PUBLIC_YOUTUBE_CLIENT_ID,
+    process.env.NEXT_PUBLIC_YOUTUBE_CLIENT_SECRET,
     redirectUri
   );
 
@@ -20,8 +20,8 @@ async function handler(req, res) {
   }
 
   console.log("Authorization code received:", code);
-  console.log("Client ID:", process.env.YOUTUBE_CLIENT_ID);
-  console.log("Client Secret:", process.env.YOUTUBE_CLIENT_SECRET);
+  console.log("Client ID:", process.env.NEXT_PUBLIC_YOUTUBE_CLIENT_ID);
+  console.log("Client Secret:", process.env.NEXT_PUBLIC_YOUTUBE_CLIENT_SECRET);
   console.log("Redirect URI:", redirectUri);
 
   try {

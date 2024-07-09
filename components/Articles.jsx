@@ -10,16 +10,25 @@ const Articles = ({ autoGenerate, setAutoGenerate }) => {
     try {
       const response = await fetch(url);
       const data = await response.json();
-      const articles = data.articles;
+      const articles = data.articles.reverse();
+      console.log("Fetched news articles:", articles);
 
-      for (const article of articles) {
-        await fetch("/api/articles", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(article),
-        });
+      for (const newArticle of articles) {
+        if (
+          newArticle.title !== null ||
+          newArticle.title !== undefined ||
+          newArticle.title !== "[Removed]" ||
+          newArticle.title !== "[removed]"
+        ) {
+          console.log("Saving article:", newArticle);
+          await fetch("/api/articles", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ newArticle, autoGenerate }),
+          });
+        }
       }
 
       fetchSavedArticles();
@@ -32,7 +41,7 @@ const Articles = ({ autoGenerate, setAutoGenerate }) => {
     try {
       const response = await fetch("/api/articles");
       const data = await response.json();
-      setArticles(Array.isArray(data) ? data : []);
+      setArticles(Array.isArray(data.reverse()) ? data : []);
     } catch (error) {
       console.error("Error fetching saved articles:", error);
       setArticles([]);
@@ -55,6 +64,16 @@ const Articles = ({ autoGenerate, setAutoGenerate }) => {
 
   const handleExpandArticle = (index) => {
     setExpandedArticle(index === expandedArticle ? null : index);
+  };
+  const handleUploadVideo = (article) => {
+    console.log("Uploading video for article:", article);
+    fetch("/api/upload-from-front-end", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(article),
+    });
   };
 
   const handlePublishToVideo = (article) => {
@@ -84,7 +103,7 @@ const Articles = ({ autoGenerate, setAutoGenerate }) => {
   };
 
   return (
-    <div className="content-area">
+    <div className="">
       <h1 className="text-3xl font-bold mb-6">News Headlines</h1>
       <div className="mb-6">
         <label className="flex items-center">
@@ -157,6 +176,12 @@ const Articles = ({ autoGenerate, setAutoGenerate }) => {
                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                   >
                     Publish to Video
+                  </button>
+                  <button
+                    onClick={() => handleUploadVideo(article)}
+                    className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+                  >
+                    Upload Video
                   </button>
                   <button
                     onClick={() => handleDeleteArticle(article)}

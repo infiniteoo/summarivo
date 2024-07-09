@@ -1,7 +1,7 @@
 import { Worker } from "worker_threads";
 import path from "path";
 
-export const runWorker = (workerData, onComplete, onError) => {
+export const runWorker = async (workerData, onComplete, onError) => {
   const worker = new Worker(
     path.join(process.cwd(), "utils", "ffmpegWorker.js"),
     {

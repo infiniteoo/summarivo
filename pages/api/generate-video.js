@@ -1,12 +1,15 @@
+// api/generate-video.js:
+
 import path from "path";
 
-import { fetchFullArticleContent } from "../../utils/fetchFullArticleContent";
-import { readArticles, writeArticles } from "../../utils/articleAccess";
+import { fetchFullArticleContent } from "@/utils/fetchFullArticleContent";
+import { readArticles, writeArticles } from "@/utils/articleAccess";
 import { generateSummaryScript } from "@/utils/generateSummaryScript";
 import { textToSpeech } from "@/utils/textToSpeech";
 import { generatePics } from "@/utils/generatePics";
 import { createDirectories, writeFile, readFiles } from "@/utils/fileUtils";
 import { runWorker } from "@/utils/workerUtils";
+import uploadVideo from "@/utils/upload-video";
 
 const handlePostRequest = async (req, res) => {
   const articleToRender = req.body;
@@ -56,9 +59,12 @@ const handlePostRequest = async (req, res) => {
     const imageFiles = readFiles(imagesDirectory);
     const outputFilePath = path.join(articleDirectory, "output.mp4");
 
-    runWorker(
+    await runWorker(
       { audioFiles, imageFiles, outputFilePath },
-      () => res.status(200).json({ outputFileName: `${outputFilePath}` }),
+      async () => {
+        await uploadVideo(outputFilePath, articleToRender, scriptSegments);
+        res.status(200).json({ outputFileName: `${outputFilePath}` });
+      },
       (error) => res.status(500).json({ error: error.message })
     );
   } else {
