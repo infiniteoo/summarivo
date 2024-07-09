@@ -15,11 +15,19 @@ const handlePostRequest = async (req, res) => {
 
   const articles = await readArticles();
 
-  if (!autoGenerate) {
+  if (!autoGenerate || articleToRender.completed === true) {
     // do nothing, do not execute below code, just return
-    return res
-      .status(200)
-      .json({ message: "Auto-Generate turned OFF - doing nothing." });
+    if (!autoGenerate) {
+      console.log("Auto-Generate turned OFF - doing nothing.");
+      return res
+        .status(200)
+        .json({ message: "Auto-Generate turned OFF - doing nothing." });
+    } else {
+      console.log("Article already completed - doing nothing.");
+      return res
+        .status(200)
+        .json({ message: "Article already completed - doing nothing." });
+    }
   }
 
   if (/\[\+[a-zA-Z0-9 ]*chars\]/.test(articleToRender.content)) {
@@ -77,7 +85,13 @@ const handlePostRequest = async (req, res) => {
     res.status(500).json({ error: "Error generating script segments" });
   }
 
-  articles.push(articleToRender);
+  articleToRender.completed = true;
+  // Update the existing article in the articles array
+  const index = articles.findIndex((a) => a.url === articleToRender.url);
+  if (index !== -1) {
+    articles[index] = articleToRender;
+  }
+
   await writeArticles(articles);
   res.status(201).json(articleToRender);
 };

@@ -4,7 +4,15 @@ import path from "path";
 const filePath = path.resolve("data", "articles.json");
 
 export const writeArticles = async (articles) => {
-  fs.writeFileSync(filePath, JSON.stringify(articles, null, 2));
+  const updatedArticles = articles.map((article) => {
+    // Add the "completed" property if it doesn't exist
+    if (!article.hasOwnProperty("completed")) {
+      article.completed = false;
+    }
+    return article;
+  });
+
+  fs.writeFileSync(filePath, JSON.stringify(updatedArticles, null, 2));
 };
 
 export const readArticles = () => {
