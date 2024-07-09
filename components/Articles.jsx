@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 
-const Articles = ({ autoGenerate, setAutoGenerate }) => {
+const Articles = ({
+  autoGenerate,
+  setAutoGenerate,
+  hideCompleted,
+  setHideCompleted,
+}) => {
   const [articles, setArticles] = useState([]);
   const [expandedArticle, setExpandedArticle] = useState(null);
 
@@ -42,6 +47,7 @@ const Articles = ({ autoGenerate, setAutoGenerate }) => {
       const response = await fetch("/api/articles");
       const data = await response.json();
       setArticles(Array.isArray(data.reverse()) ? data : []);
+      console.log("Fetched saved articles:", data);
     } catch (error) {
       console.error("Error fetching saved articles:", error);
       setArticles([]);
@@ -65,6 +71,7 @@ const Articles = ({ autoGenerate, setAutoGenerate }) => {
   const handleExpandArticle = (index) => {
     setExpandedArticle(index === expandedArticle ? null : index);
   };
+
   const handleUploadVideo = (article) => {
     console.log("Uploading video for article:", article);
     fetch("/api/upload-from-front-end", {
@@ -102,10 +109,19 @@ const Articles = ({ autoGenerate, setAutoGenerate }) => {
     setAutoGenerate(!autoGenerate);
   };
 
+  const handleHideCompletedToggle = () => {
+    setHideCompleted(!hideCompleted);
+  };
+
+  // Filtered articles based on hideCompleted and article.completed
+  const filteredArticles = articles.filter(
+    (article) => !hideCompleted || !article.completed
+  );
+
   return (
     <div className="">
       <h1 className="text-3xl font-bold mb-6">News Headlines</h1>
-      <div className="mb-6">
+      <div className="mb-6 flex-row flex">
         <label className="flex items-center">
           <input
             type="checkbox"
@@ -115,9 +131,18 @@ const Articles = ({ autoGenerate, setAutoGenerate }) => {
           />
           Auto-generate videos
         </label>
+        <label className="flex items-center ml-5">
+          <input
+            type="checkbox"
+            checked={hideCompleted}
+            onChange={handleHideCompletedToggle}
+            className="mr-2"
+          />
+          Hide completed
+        </label>
       </div>
       <ul>
-        {articles.map((article, index) => (
+        {filteredArticles.map((article, index) => (
           <li
             key={index}
             className={`mb-4 border border-gray-700 rounded-lg p-4 ${
@@ -169,6 +194,9 @@ const Articles = ({ autoGenerate, setAutoGenerate }) => {
                 </p>
                 <p className="mt-2">
                   <strong>Content:</strong> {article.content}
+                </p>
+                <p className="mt-2">
+                  <strong>Completed:</strong> {article.completed ? "Yes" : "No"}
                 </p>
                 <div className="flex space-x-2 mt-4">
                   <button

@@ -9,6 +9,7 @@ import "./globals.css";
 
 const Home = ({ message }) => {
   const [autoGenerate, setAutoGenerate] = useState(false);
+  const [hideCompleted, setHideCompleted] = useState(false);
   const [currentPage, setCurrentPage] = useState("articles");
   const [youTubeAuthenticated, setYouTubeAuthenticated] = useState(false);
 
@@ -35,6 +36,8 @@ const Home = ({ message }) => {
             <StatusBar youTubeAuthenticated={youTubeAuthenticated} />
             <Articles
               autoGenerate={autoGenerate}
+              hideCompleted={hideCompleted}
+              setHideCompleted={setHideCompleted}
               setAutoGenerate={setAutoGenerate}
             />
           </>
