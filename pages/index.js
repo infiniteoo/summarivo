@@ -6,6 +6,7 @@ import withSession from "@/lib/session";
 import StatusBar from "@/components/StatusBar";
 
 import "./globals.css";
+import TikTokAuth from "@/components/TikTokAuth";
 
 const Home = ({ message }) => {
   const [autoGenerate, setAutoGenerate] = useState(false);
@@ -43,6 +44,7 @@ const Home = ({ message }) => {
           </>
         )}
         {currentPage === "youtube-auth" && <YouTubeAuth />}
+        {currentPage === "tiktok-auth" && <TikTokAuth />}
       </div>
     </div>
   );
